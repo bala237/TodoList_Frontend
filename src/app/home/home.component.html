@@ -1,0 +1,38 @@
+<section class="vh-100 gradient-custom">
+<div class="container">
+    <div class="d-flex justify-content-center" style="color: white;">
+    <h2>My To-Do List</h2>
+    </div>  
+    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    <div class='container'>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Name of the Task </th>
+                    <th> Task Description </th>
+                    <th> Last Updated </th>
+                    <th> Update Task Details </th>
+                    <th> Delete Task </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let todo of todos'>
+                    <td> <input type="checkbox" /></td>
+                    <td> {{todo.task}} </td>
+                    <td>{{todo.description}} </td>
+                    <td> {{todo.updatedDate}} </td>
+                    <td><button (click)="updateTodo(todo.id)" class="btn btn-secondary"> Update</button></td>
+                    <td><button (click)="deleteTodo(todo.id)" class="btn btn-secondary"> Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="center">
+            <button (click)="addTodo()" class="btn btn-secondary"> Add Task</button>
+        </div>
+        </div>
+    </div>
+</div>
+</section>

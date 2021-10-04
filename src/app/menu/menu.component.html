@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav navbar-collapse">
+        <li class = "nav-item">
+            <h3><a routerLink="#" routerLinkActive="active" class="nav-link" >To-Do List</a></h3>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="create-employee" routerLinkActive="active" class="nav-link" ></a>
+        </li>
+    </ul>  
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li> <h4><a *ngIf= '!authenticationService.isUserLoggedIn()' style="text-decoration: none" routerLink = "/login" class="nav-link">Login</a></h4> </li>
+        <li> <h4><a *ngIf= 'authenticationService.isUserLoggedIn()' routerLink = "/logout" style="text-decoration: none" class="nav-link">Logout</a></h4> </li>
+    </ul>
+</nav>
+  
